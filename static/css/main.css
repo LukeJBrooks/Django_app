@@ -1,8 +1,8 @@
-#logo{
-}
+#logo{}
 
-body{background-color:darkcyan;}
+body{background-color:bisque;}
 
-#total-orders{background-color: rgb(228, 132, 132);}
-#orders_delivered{background-color:beige;}
-#orders_pending{background-color:aquamarine;}
+#total-orders{background-color:blue;}
+#orders-delivered{background-color:#fcfc0e;}
+#orders-pending{background-color:red;}
+
