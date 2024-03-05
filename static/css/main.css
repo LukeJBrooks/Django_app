@@ -1,8 +1,6 @@
-#logo{}
+body{background-color:aqua;}
 
-body{background-color:bisque;}
-
-#total-orders{background-color:blue;}
-#orders-delivered{background-color:#fcfc0e;}
-#orders-pending{background-color:red;}
+#total-orders{background-color:brown}
+#orders-delivered{background-color:purple;}
+#orders-pending{background-color:aqua;}
 
