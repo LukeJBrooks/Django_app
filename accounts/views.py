@@ -9,12 +9,12 @@ from .forms import OrderForm
 def home(request):
     orders = Order.objects.all()
     customers = Customer.objects.all()
-
     total_customers = customers.count()
     total_orders = orders.count()
+    orders.count()
     delivered = orders.filter(status = 'Delivered').count()
     pending = orders.filter(status = 'Pending').count()
-    context = {'orders': orders, 'customers': customers, 'total_orders': total_customers, 'delivered': delivered, 'pending':pending}
+    context = {'orders': orders, 'customers': customers, 'total_orders': total_orders, 'total_customer': total_customers, 'delivered': delivered, 'pending':pending}
     return render(request, 'accounts/dashboard.html', context)
 
 def products(request):
@@ -40,7 +40,6 @@ def createOrder(request):
     context={'form': form}
     return render(request, 'accounts/order_form.html', context)
 
-
 def updateOrder(request,pk):
     order = Order.objects.get(id=pk)
     form = OrderForm(instance=order)
@@ -56,10 +55,8 @@ def updateOrder(request,pk):
 def deleteOrder(request,pk):
     order = Order.objects.get(id=pk)
     if request.method == "POST":
-        order.delete
+        order.delete()
         return redirect('/')
 
-
-
     context={'item':order}
-    return render(request, 'accounts/delete.html',context)
+    return render(request, 'accounts/delete.html', context)
